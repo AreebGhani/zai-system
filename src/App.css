@@ -1,6 +1,6 @@
 /* Global Settings */
 
-a {
+a, .a {
   text-decoration: none;
   cursor: pointer;
   color: var(--primary-color);
@@ -8,7 +8,10 @@ a {
 
 a:hover,
 a:focus,
-a:visited {
+a:visited,
+.a:hover,
+.a:focus,
+.a:visited {
   text-decoration: none;
   outline: none;
 }

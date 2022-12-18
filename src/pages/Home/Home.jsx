@@ -15,8 +15,43 @@ export default function Home() {
       <Helmet>
         <title>Home</title>
         <link rel="stylesheet" href="/flaticon/flaticon.css" />
+        <link rel="stylesheet" href="/css/responsive.css" />
       </Helmet>
       <Header />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <br />

@@ -1,8 +1,8 @@
 import React from 'react';
 import "./App.css";
-import "./assets/css/responsive.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import "./assets/css/theme.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 import "font-awesome/css/font-awesome.min.css";
 import { Routes, Route } from 'react-router-dom';
 import { Home, About } from "./pages";
