@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Preloader, Header } from "../../components"
+import { Preloader, Header, Hero } from "../../components"
 import { Helmet } from 'react-helmet';
 
 export default function Home() {
@@ -18,6 +18,7 @@ export default function Home() {
         <link rel="stylesheet" href="/css/responsive.css" />
       </Helmet>
       <Header />
+      <Hero />
       <br />
       <br />
       <br />

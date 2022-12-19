@@ -2,7 +2,7 @@ import React from 'react';
 import "./Header.css";
 import { Link } from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
-import { Navbar } from "../";
+import { Navbar, StickyNavbar } from "../";
 
 export default function Header() {
   return (
@@ -77,6 +77,7 @@ export default function Header() {
         </div>
       </div>
       {/* <!--End Header Lower--> */}
+      <StickyNavbar />
     </header>
   )
 }

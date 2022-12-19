@@ -2,81 +2,82 @@ import React, { useEffect, useState } from 'react';
 import "./Navbar.css";
 import { NavLink } from 'react-router-dom';
 
+export const NavLinks = [
+  {
+    name: 'Home',
+    to: '/',
+  },
+  {
+    name: 'About',
+    to: '/about',
+    menu: [
+      {
+        name: 'About',
+        to: '/about',
+      },
+      {
+        name: 'Team',
+        to: '/about',
+      },
+      {
+        name: 'Team Detail',
+        to: '/about',
+      },
+    ]
+  },
+  {
+    name: 'Services',
+    to: '/services',
+    menu: [
+      {
+        name: 'All Services',
+        to: '/services',
+      },
+      {
+        name: 'Service Detail',
+        to: '/services',
+      },
+    ]
+  },
+  {
+    name: 'Products',
+    to: '/products',
+    menu: [
+      {
+        name: 'Products',
+        to: '/products',
+      },
+      {
+        name: 'Products Detail',
+        to: '/products',
+      },
+      {
+        name: 'Literature Review',
+        to: '/products',
+      },
+    ]
+  },
+  {
+    name: 'Blog',
+    to: '/blog',
+    menu: [
+      {
+        name: 'Blog',
+        to: '/blog',
+      },
+      {
+        name: 'Blog Detail',
+        to: '/blog',
+      },
+    ]
+  },
+  {
+    name: 'Contact',
+    to: '/contact',
+  },
+]
+
 export default function Navbar() {
-  const NavLinks = [
-    {
-      name: 'Home',
-      to: '/',
-    },
-    {
-      name: 'About',
-      to: '/about',
-      menu: [
-        {
-          name: 'About',
-          to: '/about',
-        },
-        {
-          name: 'Team',
-          to: '/about',
-        },
-        {
-          name: 'Team Detail',
-          to: '/about',
-        },
-      ]
-    },
-    {
-      name: 'Services',
-      to: '/services',
-      menu: [
-        {
-          name: 'All Services',
-          to: '/services',
-        },
-        {
-          name: 'Service Detail',
-          to: '/services',
-        },
-      ]
-    },
-    {
-      name: 'Products',
-      to: '/products',
-      menu: [
-        {
-          name: 'Products',
-          to: '/products',
-        },
-        {
-          name: 'Products Detail',
-          to: '/products',
-        },
-        {
-          name: 'Literature Review',
-          to: '/products',
-        },
-      ]
-    },
-    {
-      name: 'Blog',
-      to: '/blog',
-      menu: [
-        {
-          name: 'Blog',
-          to: '/blog',
-        },
-        {
-          name: 'Blog Detail',
-          to: '/blog',
-        },
-      ]
-    },
-    {
-      name: 'Contact',
-      to: '/contact',
-    },
-  ]
 
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -98,17 +99,20 @@ export default function Navbar() {
   }, []);
 
   const [toggleDropdown, setToggleDropdown] = useState({
-    display: "none"
+    i: false,
+    className: "none"
   });
 
-  const handleToggleDropdown = () => {
-    toggleDropdown.display === "none" ?
+  const handleToggleDropdown = i => {
+    toggleDropdown.className === "none" ?
       setToggleDropdown({
-        display: "block"
+        i,
+        className: "show"
       })
       :
       setToggleDropdown({
-        display: "none"
+        i,
+        className: "none"
       });
   }
 
@@ -132,7 +136,7 @@ export default function Navbar() {
                     <NavLink className={(navColor) => navColor.isActive ? "a current" : "a"} to={navlink.to}>{navlink.name}</NavLink>
                     {
                       navlink.menu &&
-                      <ul style={toggleDropdown}>
+                      <ul className={toggleDropdown.i === i ? toggleDropdown.className : ""}>
                         {
                           navlink.menu.map((subMenu, i) => {
                             return (
@@ -144,7 +148,7 @@ export default function Navbar() {
                         }
                       </ul>
                     }
-                    {navlink.menu && windowDimensions.width < 768 && <div className="dropdown-btn" onClick={handleToggleDropdown}><span className="fa fa-angle-down"></span></div>}
+                    {navlink.menu && windowDimensions.width < 768 && <div className="dropdown-btn" onClick={() => handleToggleDropdown(i)}><span className="fa fa-angle-down"></span></div>}
                   </li>
                 )
               })
